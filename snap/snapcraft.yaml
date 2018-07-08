@@ -1,0 +1,30 @@
+name: liedetector # check to see if it's available
+version: '1.0' # this is freakin' awesome
+summary: A Python-based Lie Detector # 79 char long summary
+description: |
+  Your terminal knows the truth.
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
+
+apps:
+  liedetector:
+    command: python3 $SNAP/bin/liedetector.py
+    plugs:
+      - home
+parts: 
+  my-part:
+    source: https://github.com/kz6fittycent/lie_detector
+    source-type: git
+    plugin: python
+    python-version: python3
+    
+    build-packages:
+      - python3
+     
+    stage-packages:
+      - python3
+  
+  publish:
+    plugin: copy
+    files:
+      ./liedetector.py: bin/liedetector.py
