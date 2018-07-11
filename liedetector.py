@@ -10,10 +10,11 @@ print ("             WELCOME TO LIE DETECTOR")
 print (50 * '-')
 print (50 * '#')
 time.sleep(1)
-print ("MIT License, v. 1.1")
+print ("MIT License, v. 1.2")
 time.sleep(2)
 print()
-
+print("Activating polygraph equipment...")
+print()
 def main():
    
     print ("Are you a liar? ")
@@ -24,7 +25,7 @@ def main():
        print()
        time.sleep(2.0)
        print("That's interesting...")
-       time.sleep(1.5)
+       time.sleep(2.5)
        print()
        print("LIAR!!!")
       
@@ -34,7 +35,7 @@ def main():
        time.sleep(2.0)
        print("hmmmmmm....")
        print()
-       time.sleep(1.0)
+       time.sleep(2.0)
        print("hmmm...")
        print()
        time.sleep(2.0)
