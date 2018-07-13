@@ -14,6 +14,7 @@ print ("MIT License, v. 1.2")
 time.sleep(2)
 print()
 print("Activating polygraph equipment...")
+time.sleep(10)
 print()
 def main():
    
@@ -36,7 +37,7 @@ def main():
        print("hmmmmmm....")
        print()
        time.sleep(2.0)
-       print("hmmm...")
+       print("I'm not sure I believe you...")
        print()
        time.sleep(2.0)
        print("LYING LIAR PANTS!!!")
