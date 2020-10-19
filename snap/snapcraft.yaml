@@ -1,22 +1,29 @@
-name: liedetector # check to see if it's available
-version: git
-summary: A Python-based Lie Detector # 79 char long summary
+name: liedetector
+adopt-info: liedetector
+summary: A Python-based Lie Detector
 description: |
   Your terminal knows the truth.
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs
+
+license: MIT
+
+base: core18
+grade: stable 
+confinement: strict
 
 apps:
   liedetector:
     command: python3 $SNAP/bin/liedetector.py
-    plugs:
-      - home
-parts: 
+
+liedetector: 
   my-part:
     source: https://github.com/kz6fittycent/lie_detector
     source-type: git
     plugin: python
     python-version: python3
+    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
     
     build-packages:
       - python3
@@ -25,6 +32,6 @@ parts:
       - python3
   
   publish:
-    plugin: copy
-    files:
+    plugin: dump
+    source: .
       ./liedetector.py: bin/liedetector.py
