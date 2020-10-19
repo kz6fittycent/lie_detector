@@ -14,7 +14,7 @@ apps:
   liedetector:
     command: python3 $SNAP/bin/liedetector.py
 
-liedetector: 
+parts: 
   liedetector:
     source: https://github.com/kz6fittycent/lie_detector
     source-type: git
